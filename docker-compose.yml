@@ -1,8 +1,12 @@
 services:
   web:
-    build: ../dizz/
+    build: ../9ziggy9.web/
     ports:
       - "9002:9002"
+  ws:
+    build: ../9ziggy9.ws/
+    ports:
+      - "9003:9003"
   proxy:
     image: nginx:latest
     ports:
