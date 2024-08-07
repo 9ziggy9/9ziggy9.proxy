@@ -1,6 +1,7 @@
 .PHONY: start_server start_host kill_server zrok_shell docker_build
 
 up:
+	docker-compose build --no-cache
 	docker-compose up
 
 share:
