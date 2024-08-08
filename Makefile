@@ -1,6 +1,6 @@
-.PHONY: start_server start_host kill_server zrok_shell docker_build
+.PHONY: clean start_server start_host kill_server zrok_shell docker_build
 
-up:
+up: clean
 	docker-compose build --no-cache
 	docker-compose up
 
@@ -16,3 +16,6 @@ docker_build:
 
 kill_server:
 	fuser -k -n tcp $(PORT)
+
+clean:
+	docker container prune -f
