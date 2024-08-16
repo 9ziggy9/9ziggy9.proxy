@@ -3,10 +3,19 @@ services:
     build: ../9ziggy9.web/
     ports:
       - "9002:9002"
+  
   ws:
     build: ../9ziggy9.ws/
     ports:
       - "9003:9003"
+
+  api:
+    build: ../9ziggy9.db/
+    ports:
+      - "9004:9004"
+    env_file:
+      - .env
+  
   proxy:
     image: nginx:latest
     ports:

@@ -8,7 +8,6 @@ share:
 	zrok share reserved 9ziggy9
 
 docker: docker_build
-	docker container rm 9ziggy9.proxy
 	docker run -p 9001:9001 --name 9ziggy9.proxy --network=host 9ziggy9.proxy
 
 docker_build:
